@@ -9,7 +9,7 @@ import com.cg.entities.BusOperator;
 import com.cg.entities.FeedBack;
 
 @Repository
-public interface IFeedBackRepository extends JpaRepository<FeedBack, Integer> {
+public interface FeedbackDao extends JpaRepository<FeedBack, Integer> {
 	
 	//public FeedBack addFeedback(FeedBack feedback);
 	//public List<FeedBack> viewAllFeedBacks(String routeName,BusOperator operator);

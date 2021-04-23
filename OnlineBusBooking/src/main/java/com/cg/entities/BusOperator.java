@@ -52,6 +52,11 @@ public class BusOperator {
 	public void setCaseNumber(List<Integer> caseNumber) {
 		this.caseNumber = caseNumber;
 	}
+	@Override
+	public String toString() {
+		return "BusOperator [busOperatorId=" + busOperatorId + ", busOperatorUsername=" + busOperatorUsername
+				+ ", passowrd=" + passowrd + ", caseNumber=" + caseNumber + "]";
+	}
 	
 	
 }

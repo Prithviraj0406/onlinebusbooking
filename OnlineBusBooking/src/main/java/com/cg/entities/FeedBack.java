@@ -15,8 +15,9 @@ import javax.persistence.Table;
 public class FeedBack {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int rating;
-	private String comment;
+	private int feedbackId;
+	private int ratings;
+	private String comments;
 	private String username;
 	private String routeName;
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -28,26 +29,34 @@ public class FeedBack {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public FeedBack(int rating, String comment, String username, String routeName, User user, BusOperator busoperator) {
+	public FeedBack(int feedbackId, int ratings, String comments, String username, String routeName, User user,
+			BusOperator busoperator) {
 		super();
-		this.rating = rating;
-		this.comment = comment;
+		this.feedbackId = feedbackId;
+		this.ratings = ratings;
+		this.comments = comments;
 		this.username = username;
 		this.routeName = routeName;
 		this.user = user;
 		this.busoperator = busoperator;
 	}
-	public int getRating() {
-		return rating;
+	public int getFeedbackId() {
+		return feedbackId;
 	}
-	public void setRating(int rating) {
-		this.rating = rating;
+	public void setFeedbackId(int feedbackId) {
+		this.feedbackId = feedbackId;
 	}
-	public String getComment() {
-		return comment;
+	public int getRatings() {
+		return ratings;
 	}
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setRatings(int ratings) {
+		this.ratings = ratings;
+	}
+	public String getComments() {
+		return comments;
+	}
+	public void setComments(String comments) {
+		this.comments = comments;
 	}
 	public String getUsername() {
 		return username;
@@ -72,6 +81,11 @@ public class FeedBack {
 	}
 	public void setBusoperator(BusOperator busoperator) {
 		this.busoperator = busoperator;
+	}
+	@Override
+	public String toString() {
+		return "FeedBack [feedbackId=" + feedbackId + ", ratings=" + ratings + ", comments=" + comments + ", username="
+				+ username + ", routeName=" + routeName + ", user=" + user + ", busoperator=" + busoperator + "]";
 	}
 	
 	

@@ -10,7 +10,7 @@ import com.cg.entities.User;
 //import com.cg.exceptions.InvalidBookingIdException;
 
 @Repository
-public interface IUsersRepository extends JpaRepository<User,Integer>{
+public interface UserDao extends JpaRepository<User,Integer>{
 
 	/*public void addUser(User user);
 	public void deleteUser(String username);

@@ -9,8 +9,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Booking {
-	
-
 	@Id
 	private long bookingId; // busoperatorid+busid+date+time+uniqueNumber
 	private String username; // login-username
@@ -20,9 +18,28 @@ public class Booking {
 	private String destination;
 	private int numberOfSeats;
 	private int amountPaid;
-	private LocalDate date;
+	private LocalDate bookingdate;
 	private LocalTime journeyStartTime;
 	private LocalTime journeyEndTime;
+	public Booking() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Booking(long bookingId, String username, String busNumber, String source, String destination,
+			int numberOfSeats, int amountPaid, LocalDate bookingdate, LocalTime journeyStartTime,
+			LocalTime journeyEndTime) {
+		super();
+		this.bookingId = bookingId;
+		this.username = username;
+		this.busNumber = busNumber;
+		this.source = source;
+		this.destination = destination;
+		this.numberOfSeats = numberOfSeats;
+		this.amountPaid = amountPaid;
+		this.bookingdate = bookingdate;
+		this.journeyStartTime = journeyStartTime;
+		this.journeyEndTime = journeyEndTime;
+	}
 	public long getBookingId() {
 		return bookingId;
 	}
@@ -65,11 +82,11 @@ public class Booking {
 	public void setAmountPaid(int amountPaid) {
 		this.amountPaid = amountPaid;
 	}
-	public LocalDate getDate() {
-		return date;
+	public LocalDate getBookingdate() {
+		return bookingdate;
 	}
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setBookingdate(LocalDate bookingdate) {
+		this.bookingdate = bookingdate;
 	}
 	public LocalTime getJourneyStartTime() {
 		return journeyStartTime;
@@ -82,6 +99,13 @@ public class Booking {
 	}
 	public void setJourneyEndTime(LocalTime journeyEndTime) {
 		this.journeyEndTime = journeyEndTime;
+	}
+	@Override
+	public String toString() {
+		return "Booking [bookingId=" + bookingId + ", username=" + username + ", busNumber=" + busNumber + ", source="
+				+ source + ", destination=" + destination + ", numberOfSeats=" + numberOfSeats + ", amountPaid="
+				+ amountPaid + ", bookingdate=" + bookingdate + ", journeyStartTime=" + journeyStartTime
+				+ ", journeyEndTime=" + journeyEndTime + "]";
 	}
 	
 }
