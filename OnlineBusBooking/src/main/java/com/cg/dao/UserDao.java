@@ -1,23 +1,15 @@
-package com.cg.dao;
 
-import java.util.List;
+package com.cg.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cg.entities.Booking;
 import com.cg.entities.User;
-//import com.cg.exceptions.InvalidBookingIdException;
-
 @Repository
-public interface UserDao extends JpaRepository<User,Integer>{
+public interface UserDao extends JpaRepository<User,Integer>  {
+	boolean existsByUsername(String username);  
+	User findByUsername(String username);
+	void save(String newPassword);
+	
 
-	/*public void addUser(User user);
-	public void deleteUser(String username);
-	public void updatePassword(String username,String newPassword);
-	
-	
-	public User singIn(User user);
-	public User singOut(User user);*/
-	
 }
